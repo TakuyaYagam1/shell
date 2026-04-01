@@ -33,11 +33,19 @@ Row {
             visible: pfp.status !== Image.Ready
         }
 
-        CachingImage {
+        ProfileImage {
             id: pfp
 
             anchors.fill: parent
             path: `${Paths.home}/.face`
+        }
+
+        Connections {
+            target: root.facePicker
+
+            function onAccepted(): void {
+                pfp.reload();
+            }
         }
 
         MouseArea {

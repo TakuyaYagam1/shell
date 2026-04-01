@@ -6,6 +6,7 @@
 #include <qdir.h>
 #include <qfileinfo.h>
 #include <qfuturewatcher.h>
+#include <qimagereader.h>
 #include <qloggingcategory.h>
 #include <qqmlengine.h>
 
@@ -136,6 +137,10 @@ QString CUtils::toLocalFile(const QUrl& url) const {
     }
 
     return url.toLocalFile();
+}
+
+QString CUtils::imageFormat(const QString& path) const {
+    return QString::fromLatin1(QImageReader::imageFormat(path));
 }
 
 } // namespace caelestia
