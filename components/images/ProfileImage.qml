@@ -1,6 +1,7 @@
-import Caelestia
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import qs.utils
+import Caelestia
 
 Item {
     id: root

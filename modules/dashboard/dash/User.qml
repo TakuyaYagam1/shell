@@ -102,11 +102,11 @@ Row {
         }
 
         Connections {
-            target: root.facePicker
-
             function onAccepted(): void {
                 pfp.reload();
             }
+
+            target: root.facePicker
         }
     }
 
