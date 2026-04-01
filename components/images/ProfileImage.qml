@@ -12,7 +12,7 @@ Item {
     readonly property int status: loader.item?.status ?? Image.Null
 
     function reload(): void {
-        _format = CUtils.imageFormat(path);
+        _format = Qt.binding(() => CUtils.imageFormat(path));
         loader.active = false;
         loader.active = true;
     }
@@ -31,7 +31,7 @@ Item {
             fillMode: AnimatedImage.PreserveAspectCrop
             asynchronous: true
             playing: true
-            source: `file://${root.path}`
+            source: Qt.resolvedUrl(`file://${root.path}`)
         }
     }
 
