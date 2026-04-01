@@ -1,11 +1,12 @@
-import qs.utils
 import Caelestia
 import QtQuick
+import qs.utils
 
 Item {
     id: root
 
     property string path
+    property string _format: CUtils.imageFormat(path)
 
     readonly property int status: loader.item?.status ?? Image.Null
 
@@ -14,8 +15,6 @@ Item {
         loader.active = false;
         loader.active = true;
     }
-
-    property string _format: CUtils.imageFormat(path)
 
     Loader {
         id: loader

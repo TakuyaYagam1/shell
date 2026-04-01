@@ -40,14 +40,6 @@ Row {
             path: `${Paths.home}/.face`
         }
 
-        Connections {
-            target: root.facePicker
-
-            function onAccepted(): void {
-                pfp.reload();
-            }
-        }
-
         MouseArea {
             anchors.fill: parent
             hoverEnabled: true
@@ -106,6 +98,14 @@ Row {
                         duration: Tokens.anim.durations.expressiveFastSpatial
                     }
                 }
+            }
+        }
+
+        Connections {
+            target: root.facePicker
+
+            function onAccepted(): void {
+                pfp.reload();
             }
         }
     }
