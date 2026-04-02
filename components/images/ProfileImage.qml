@@ -32,7 +32,7 @@ Item {
             fillMode: AnimatedImage.PreserveAspectCrop
             asynchronous: true
             playing: true
-            source: Qt.resolvedUrl(`file://${root.path}`)
+            source: Qt.resolvedUrl(root.path)
         }
     }
 
