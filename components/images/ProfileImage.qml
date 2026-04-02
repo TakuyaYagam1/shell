@@ -9,7 +9,7 @@ Item {
     property string path
     property string _format: CUtils.imageFormat(path)
 
-    readonly property int status: (loader.item as Image)?.status ?? Image.Null
+    readonly property int status: loader.item?.status ?? Image.Null // qmllint disable
 
     function reload(): void {
         _format = Qt.binding(() => CUtils.imageFormat(path));
@@ -28,6 +28,7 @@ Item {
         id: animatedComponent
 
         AnimatedImage {
+            anchors.fill: parent
             fillMode: AnimatedImage.PreserveAspectCrop
             asynchronous: true
             playing: true
@@ -39,6 +40,7 @@ Item {
         id: cachingComponent
 
         CachingImage {
+            anchors.fill: parent
             path: root.path
         }
     }
