@@ -9,7 +9,7 @@ Item {
     property string path
     property string _format: CUtils.imageFormat(path)
 
-    readonly property int status: loader.item?.status ?? Image.Null
+    readonly property int status: (loader.item as Image)?.status ?? Image.Null
 
     function reload(): void {
         _format = Qt.binding(() => CUtils.imageFormat(path));
