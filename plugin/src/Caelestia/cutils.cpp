@@ -139,6 +139,15 @@ QString CUtils::toLocalFile(const QUrl& url) const {
     return url.toLocalFile();
 }
 
+QString CUtils::imageFormat(const QUrl& url) const {
+    if (!url.isLocalFile()) {
+        qCWarning(lcCUtils) << "imageFormat: url" << url << "is not a local file";
+        return QString();
+    }
+
+    return imageFormat(url.toLocalFile());
+}
+
 QString CUtils::imageFormat(const QString& path) const {
     return QString::fromLatin1(QImageReader::imageFormat(path));
 }
