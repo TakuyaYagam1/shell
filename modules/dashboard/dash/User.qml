@@ -103,7 +103,7 @@ Row {
 
         Connections {
             function onAccepted(): void {
-                pfp.reload();
+                Qt.callLater(pfp.reload);
             }
 
             target: root.facePicker
