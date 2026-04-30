@@ -41,6 +41,7 @@ Item {
 
         CachingImage {
             anchors.fill: parent
+            cache: false
             path: root.path
         }
     }
