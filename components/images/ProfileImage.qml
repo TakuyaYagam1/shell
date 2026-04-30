@@ -31,6 +31,7 @@ Item {
             anchors.fill: parent
             fillMode: AnimatedImage.PreserveAspectCrop
             asynchronous: true
+            cache: false
             playing: true
             source: Qt.resolvedUrl(root.path)
         }
